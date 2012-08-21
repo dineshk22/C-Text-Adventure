@@ -4,6 +4,7 @@
 
 #include "stringops.h"
 #include "point.h"
+#include "location.h"
 
 #define MAX_BUFFER_SIZE 1000
 
@@ -81,7 +82,7 @@ int main(int arc, char *argv[])
 
 int getline(char *s, int limit)
 {
-	int c;
+	int c = 0;
        	char *t = s;
 	while(--limit && (c = getchar()) != EOF && c != '\n')
 		*t++ = c;
@@ -91,4 +92,9 @@ int getline(char *s, int limit)
 	*t = '\0';
 
 	return s - t;	
+}
+
+location_t **initialize_locations(int width, int height, FILE *input)
+{
+	
 }
